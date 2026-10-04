@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pillarisetty Varun | AI/ML &amp; Web Developer</title>
+<meta name="description" content="Portfolio of Pillarisetty Varun, B.Tech CSE (AI &amp; ML) student building AI/NLP and Flask web projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050810;--bg2:#0a1020;--line:rgba(120,160,255,.16);--tx:#e6ecff;--mu:#8a96b8;--blue:#3b82f6;--cy:#22d3ee;--pu:#8b5cf6;--glass:rgba(14,22,44,.55);--grad:linear-gradient(100deg,var(--blue),var(--cy))}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;overflow-x:hidden;
+background-image:radial-gradient(60rem 40rem at 85% -10%,rgba(59,130,246,.14),transparent),radial-gradient(40rem 30rem at -10% 40%,rgba(139,92,246,.08),transparent)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--cy);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+section{padding:110px 0}
+.tag{font-size:.75rem;letter-spacing:.18em;color:var(--cy);margin-bottom:18px;display:block}
+h2{font-size:clamp(2rem,4.5vw,3.4rem);line-height:1.08;letter-spacing:-.02em;font-weight:700;margin-bottom:40px}
+.g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.glass{background:var(--glass);border:1px solid var(--line);border-radius:18px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:12px;font-weight:600;font-size:.85rem;letter-spacing:.08em;border:1px solid var(--line);transition:.25s;cursor:pointer;font-family:inherit;color:var(--tx);background:transparent}
+.btn.p{background:var(--grad);color:#04101f;border:0}
+.btn:hover{transform:translateY(-2px);border-color:var(--cy);box-shadow:0 8px 30px -10px rgba(34,211,238,.45)}
+/* NAV */
+nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:min(1180px,calc(100% - 28px));z-index:50;border-radius:16px;border:1px solid transparent;transition:.3s}
+nav.sc{background:rgba(7,12,26,.7);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--line)}
+.nv{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;gap:16px}
+.logo{font-weight:700;font-size:1.2rem;letter-spacing:.04em}.logo span{color:var(--cy)}
+.links{display:flex;gap:26px;list-style:none}
+.links a{font-size:.85rem;color:var(--mu);padding:6px 0;border-bottom:2px solid transparent;transition:.2s}
+.links a:hover,.links a.on{color:var(--tx);border-color:var(--cy)}
+.st{display:flex;align-items:center;gap:8px;font-size:.65rem;letter-spacing:.14em;color:var(--mu);white-space:nowrap}
+.dot{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 10px #34d399;animation:pl 2.4s infinite}
+@keyframes pl{50%{opacity:.35}}
+.burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer;position:relative}
+.burger i{position:absolute;left:9px;right:9px;height:2px;background:var(--tx);transition:.3s}
+.burger i:nth-child(1){top:14px}.burger i:nth-child(2){top:19px}.burger i:nth-child(3){top:24px}
+.burger.o i:nth-child(1){top:19px;transform:rotate(45deg)}.burger.o i:nth-child(2){opacity:0}.burger.o i:nth-child(3){top:19px;transform:rotate(-45deg)}
+/* HERO */
+#home{min-height:100vh;display:flex;align-items:center;padding:130px 0 80px}
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:60px;align-items:center}
+.hello{font-size:.8rem;letter-spacing:.2em;color:var(--cy);margin-bottom:22px}
+h1{font-size:clamp(3rem,8vw,6.4rem);line-height:.95;letter-spacing:-.04em;font-weight:700;margin-bottom:28px}
+.lead{color:var(--mu);font-size:1.12rem;max-width:520px;margin-bottom:34px}
+.row{display:flex;gap:14px;flex-wrap:wrap}
+.soc{display:flex;gap:22px;margin-top:34px;font-size:.85rem;color:var(--mu)}
+.soc a:hover{color:var(--cy)}
+.panelw{position:relative;padding:34px 0}
+.panel{padding:28px;box-shadow:0 30px 80px -30px rgba(59,130,246,.35);position:relative}
+.panel::before{content:"";position:absolute;inset:0;border-radius:18px;padding:1px;background:linear-gradient(140deg,rgba(34,211,238,.6),transparent 40%,rgba(139,92,246,.4));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.bar{display:flex;justify-content:space-between;font-size:.7rem;letter-spacing:.18em;color:var(--mu);padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.kv{padding:15px 0;border-bottom:1px dashed var(--line)}.kv:last-child{border:0}
+.kv small{display:block;font-size:.66rem;letter-spacing:.2em;color:var(--mu)}
+.kv b{font-size:1.2rem;font-weight:600}
+.build{color:#34d399;display:flex;align-items:center;gap:10px}
+.fl{position:absolute;font-size:.7rem;letter-spacing:.14em;padding:7px 13px;border-radius:999px;background:rgba(10,16,32,.85);border:1px solid var(--line);color:var(--cy);animation:fy 6s ease-in-out infinite}
+.fl:nth-of-type(1){top:0;left:-18px}.fl:nth-of-type(2){top:22%;right:-22px;animation-delay:-1.5s;color:#a5b4fc}
+.fl:nth-of-type(3){bottom:22%;left:-34px;animation-delay:-3s}.fl:nth-of-type(4){bottom:2%;right:10px;animation-delay:-4.5s;color:#a5b4fc}
+.fl:nth-of-type(5){top:-6px;right:25%;animation-delay:-2s}
+@keyframes fy{50%{transform:translateY(-10px)}}
+/* ABOUT */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.big{font-size:clamp(1.8rem,3.4vw,2.8rem);line-height:1.15;font-weight:600;letter-spacing:-.02em;padding-left:22px;border-left:2px solid var(--cy)}
+.about p{color:var(--mu);margin-bottom:16px}
+.four{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:50px}
+.four div{padding:22px}.four small{color:var(--cy);font-size:.75rem;letter-spacing:.15em}.four b{display:block;margin-top:8px;font-size:.95rem}
+/* SKILLS */
+.sk{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.cat{padding:24px;grid-column:span 2}
+.cat:nth-child(4){grid-column:2/4}.cat:nth-child(5){grid-column:4/6}.cat:nth-child(1),.cat:nth-child(5){margin-top:20px}
+.cat h3{font-size:.72rem;letter-spacing:.2em;color:var(--mu);margin-bottom:16px;font-weight:500}
+.pills{display:flex;flex-wrap:wrap;gap:10px}
+.pill{padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:rgba(59,130,246,.06);font-size:.9rem;transition:.25s;animation:fy 7s ease-in-out infinite}
+.pill:nth-child(2n){animation-delay:-2s}.pill:nth-child(3n){animation-delay:-4s}
+.pill:hover{border-color:var(--cy);background:rgba(34,211,238,.1);transform:translateY(-3px)}
+/* EDUCATION */
+.tl{position:relative;max-width:760px;margin-left:8%;padding-left:40px;border-left:1px solid var(--line)}
+.tl>div{position:relative;margin-bottom:34px;padding:24px}
+.tl>div::before{content:"";position:absolute;left:-47px;top:30px;width:13px;height:13px;border-radius:50%;background:var(--bg);border:2px solid var(--mu)}
+.tl .cur::before{border-color:var(--cy);background:var(--cy);box-shadow:0 0 14px var(--cy)}
+.tl small{color:var(--cy);font-size:.75rem;letter-spacing:.15em}.tl h3{font-size:1.3rem;margin:4px 0}.tl p{color:var(--mu)}
+.cg{display:inline-block;margin-top:10px;padding:4px 12px;border-radius:8px;background:rgba(34,211,238,.1);color:var(--cy);font-size:.85rem}
+/* PROJECTS */
+.proj{padding:36px;margin-bottom:26px;transition:.35s;position:relative;overflow:hidden}
+.proj:hover{transform:translateY(-5px);border-color:rgba(34,211,238,.5);box-shadow:0 30px 70px -40px rgba(34,211,238,.5)}
+.badge{display:inline-block;font-size:.68rem;letter-spacing:.15em;padding:6px 12px;border-radius:999px;border:1px solid var(--line);color:var(--cy);margin-bottom:16px}
+.proj h3{font-size:clamp(1.6rem,3vw,2.3rem);letter-spacing:-.02em;line-height:1.1;margin-bottom:12px}
+.proj p{color:var(--mu);max-width:640px;margin-bottom:18px}
+.full{font-size:.88rem;font-style:italic;color:#aebbe0!important;border-left:2px solid var(--pu);padding-left:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chips span{font-size:.78rem;padding:5px 11px;border-radius:8px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:#c4cdea}
+.p1{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.pipe{display:flex;flex-direction:column;align-items:stretch;gap:0}
+.pipe div{padding:11px 16px;border:1px solid var(--line);border-radius:10px;background:rgba(59,130,246,.07);font-size:.78rem;letter-spacing:.12em;text-align:center}
+.pipe div:last-child{border-color:var(--cy);color:var(--cy)}
+.pipe i{height:20px;width:1px;margin:0 auto;background:linear-gradient(var(--blue),var(--cy));position:relative}
+.pipe i::after{content:"";position:absolute;left:-2px;top:0;width:5px;height:5px;border-radius:50%;background:var(--cy);animation:fl 2.2s linear infinite}
+@keyframes fl{to{top:100%}}
+.p2{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;font-size:.88rem;color:#c4cdea;list-style:none}
+.feat li::before{content:"+ ";color:var(--cy)}
+.p3{margin-left:10%}
+/* HACKATHON */
+.hk{display:grid;grid-template-columns:1fr 1.1fr;gap:50px;align-items:center}
+.h24{font-size:clamp(7rem,18vw,14rem);font-weight:700;line-height:.8;letter-spacing:-.06em;background:linear-gradient(160deg,var(--blue),var(--pu) 60%,transparent);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hk .meta{padding:26px;margin:24px 0}
+.hk dt{font-size:.68rem;letter-spacing:.18em;color:var(--mu);margin-top:12px}.hk dt:first-child{margin-top:0}.hk dd{font-weight:600}
+.hk p{color:var(--mu)}
+/* SERVICES */
+.sv{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.sv article{padding:28px;transition:.3s}.sv article:nth-child(even){margin-top:26px}
+.sv article:hover{border-color:var(--cy);transform:translateY(-4px)}
+.sv small{color:var(--cy);font-size:.8rem;letter-spacing:.15em}.sv h3{font-size:1.1rem;letter-spacing:.06em;margin:10px 0}.sv p{color:var(--mu);font-size:.93rem}
+.note{margin-top:46px;color:var(--mu);font-size:.9rem;max-width:620px}
+/* FOCUS */
+.road{display:grid;grid-template-columns:1fr 60px 1fr;align-items:stretch}
+.road .col{padding:30px}.road h3{font-size:.8rem;letter-spacing:.25em;margin-bottom:18px;color:var(--cy)}
+.road .col:last-child h3{color:#a5b4fc}
+.road ul{list-style:none}.road li{padding:11px 0;border-bottom:1px dashed var(--line)}
+.arrow{display:flex;align-items:center;justify-content:center}.arrow i{width:100%;height:1px;background:var(--grad);position:relative}
+.arrow i::after{content:"";position:absolute;right:0;top:-4px;border:5px solid transparent;border-left:8px solid var(--cy)}
+/* CONTACT */
+#contact{text-align:left}
+.ct{padding:clamp(30px,6vw,70px);position:relative;overflow:hidden}
+.ct::after{content:"";position:absolute;width:420px;height:420px;right:-120px;top:-160px;background:radial-gradient(circle,rgba(59,130,246,.3),transparent 70%);pointer-events:none}
+.ct h2{font-size:clamp(2.4rem,6vw,5rem);margin-bottom:22px}
+.ct p{color:var(--mu);max-width:560px;margin-bottom:32px}
+footer{border-top:1px solid var(--line);padding:46px 0}
+.ft{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:end}
+.ft b{letter-spacing:.1em}.ft p,.ft small{color:var(--mu);display:block}
+#top{position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:12px;border:1px solid var(--line);background:rgba(10,16,32,.8);backdrop-filter:blur(10px);color:var(--cy);cursor:pointer;opacity:0;pointer-events:none;transition:.3s;font-size:1.1rem}
+#top.v{opacity:1;pointer-events:auto}
+#glow{position:fixed;width:420px;height:420px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,rgba(34,211,238,.09),transparent 65%);transform:translate(-50%,-50%);left:-999px;top:-999px}
+main,footer,nav{position:relative;z-index:1}nav{position:fixed}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+/* RESPONSIVE */
+@media(max-width:960px){
+.hero,.about,.hk,.p1,.p2{grid-template-columns:1fr}.p3{margin-left:0}
+.sk{grid-template-columns:1fr 1fr}.cat,.cat:nth-child(4),.cat:nth-child(5){grid-column:auto;margin-top:0}
+.sv{grid-template-columns:1fr 1fr}.four{grid-template-columns:1fr 1fr}
+.panelw{max-width:460px}
+}
+@media(max-width:820px){
+.burger{display:block}.st{display:none}
+.links{position:absolute;top:calc(100% + 8px);left:0;right:0;flex-direction:column;gap:0;background:rgba(7,12,26,.95);backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:16px;padding:8px 20px;max-height:0;overflow:hidden;opacity:0;visibility:hidden;transition:.35s}
+.links.o{max-height:420px;opacity:1;visibility:visible}
+.links a{display:block;padding:14px 0;font-size:1rem}
+}
+@media(max-width:600px){
+section{padding:80px 0}.sk,.sv,.feat{grid-template-columns:1fr}.sv article:nth-child(even){margin-top:0}
+.btn{width:100%}.row{flex-direction:column}.tl{margin-left:4px;padding-left:26px}.tl>div::before{left:-33px}
+.road{grid-template-columns:1fr}.arrow{height:50px}.arrow i{width:1px;height:100%}.arrow i::after{top:auto;bottom:0;right:-4px;border:5px solid transparent;border-top:8px solid var(--cy);border-left:5px solid transparent}
+.proj{padding:24px}.fl{display:none}.soc{flex-wrap:wrap}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}#glow{display:none}}
+</style>
+</head>
+<body>
+<div id="glow" aria-hidden="true"></div>
+
+<!-- NAVBAR -->
+<nav id="nav" aria-label="Main">
+  <div class="nv">
+    <a href="#home" class="logo">VARUN<span>.</span></a>
+    <ul class="links" id="links">
+      <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li><li><a href="#journey">Journey</a></li><li><a href="#contact">Contact</a></li>
+    </ul>
+    <span class="st"><span class="dot"></span>AVAILABLE FOR OPPORTUNITIES</span>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+</nav>
+
+<main>
+<!-- HERO / COMMAND CENTER -->
+<section id="home"><div class="wrap hero">
+  <div>
+    <p class="hello">HELLO, I'M VARUN</p>
+    <h1>BUILDING<br><span class="g">DIGITAL</span><br><span class="g">SOLUTIONS.</span></h1>
+    <p class="lead">B.Tech CSE (AI &amp; ML) student exploring AI, NLP, Generative AI and practical web development.</p>
+    <div class="row"><a class="btn p" href="#projects">VIEW PROJECTS</a><a class="btn" href="#contact">LET'S CONNECT</a></div>
+    <div class="soc"><a href="https://github.com/Varun4245" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/varun-pillarisetty-b11733357" target="_blank" rel="noopener">LinkedIn</a><a class="mail" href="mailto:varun.freelance7@gmail.com?subject=Hello%20Varun">Email</a></div>
+  </div>
+  <div class="panelw">
+    <span class="fl">PYTHON</span><span class="fl">NLP</span><span class="fl">RAG</span><span class="fl">FLASK</span><span class="fl">MYSQL</span>
+    <div class="panel glass" id="panel">
+      <div class="bar"><span>SYSTEM STATUS</span><span>v2027</span></div>
+      <div class="kv"><b class="build"><span class="dot"></span>BUILDING</b></div>
+      <div class="kv"><small>CURRENT FOCUS</small><b>RAG + NLP + AI</b></div>
+      <div class="kv"><small>EXPERIENCE</small><b>PROJECT BASED</b></div>
+      <div class="kv"><small>CGPA</small><b>7.39</b></div>
+      <div class="kv"><small>LOCATION</small><b>ELURU, INDIA</b></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ABOUT -->
+<section id="about"><div class="wrap">
+  <span class="tag rv">ABOUT</span><h2 class="rv">WHO IS VARUN?</h2>
+  <div class="about rv">
+    <p class="big">I don't just learn technologies.<br>I learn by building.</p>
+    <div>
+      <p>I am a final-year B.Tech student specializing in Computer Science and Engineering with Artificial Intelligence and Machine Learning.</p>
+      <p>I enjoy building practical applications using Python, web technologies and databases while exploring Artificial Intelligence, Natural Language Processing and Generative AI.</p>
+      <p>My current focus is improving my development skills through real-world projects and building solutions that are simple, useful and reliable.</p>
+    </div>
+  </div>
+  <div class="four rv">
+    <div class="glass"><small>01</small><b>AI / ML</b></div><div class="glass"><small>02</small><b>NLP</b></div>
+    <div class="glass"><small>03</small><b>WEB DEVELOPMENT</b></div><div class="glass"><small>04</small><b>PROBLEM SOLVING</b></div>
+  </div>
+</div></section>
+
+<!-- SKILLS -->
+<section id="skills"><div class="wrap">
+  <span class="tag rv">TECH CONSTELLATION</span><h2 class="rv">SKILLS &amp; TOOLS</h2>
+  <div class="sk rv">
+    <div class="cat glass"><h3>PROGRAMMING</h3><div class="pills"><span class="pill">Python</span><span class="pill">C</span><span class="pill">SQL</span></div></div>
+    <div class="cat glass"><h3>WEB</h3><div class="pills"><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span><span class="pill">Flask</span></div></div>
+    <div class="cat glass"><h3>DATABASE</h3><div class="pills"><span class="pill">MySQL</span></div></div>
+    <div class="cat glass"><h3>TOOLS</h3><div class="pills"><span class="pill">Git</span><span class="pill">GitHub</span></div></div>
+    <div class="cat glass"><h3>AI / ML</h3><div class="pills"><span class="pill">Artificial Intelligence</span><span class="pill">Machine Learning</span><span class="pill">NLP</span><span class="pill">Generative AI</span><span class="pill">RAG</span></div></div>
+  </div>
+</div></section>
+
+<!-- EDUCATION / JOURNEY -->
+<section id="journey"><div class="wrap">
+  <span class="tag rv">EDUCATION</span><h2 class="rv">THE JOURNEY SO FAR</h2>
+  <div class="tl">
+    <div class="glass cur rv"><small>2022 – 2027 · CURRENT</small><h3>B.Tech – CSE (AI &amp; ML)</h3><p>Ramachandra College of Engineering, Eluru</p><span class="cg">CGPA 7.39</span></div>
+    <div class="glass rv"><small>PREVIOUS</small><h3>Intermediate</h3><p>Sri Chaitanya Junior College, Eluru</p></div>
+    <div class="glass rv"><small>PREVIOUS</small><h3>SSC</h3><p>Sasi E.M. High School, Eluru</p></div>
+  </div>
+</div></section>
+
+<!-- FEATURED PROJECTS -->
+<section id="projects"><div class="wrap">
+  <span class="tag rv">FEATURED PROJECTS</span><h2 class="rv">THINGS I'VE BUILT.</h2>
+
+  <article class="proj glass rv"><div class="p1">
+    <div>
+      <span class="badge">ONGOING • INDIVIDUAL PROJECT</span>
+      <h3>LEGAL RAG QUESTION ANSWERING</h3>
+      <p class="full">Retrieval-Augmented Question Answering via Chain-of-Thought Reasoning with Large Language Models, Applied to Legal Document Summarization and Review.</p>
+      <p>An individual AI/NLP project exploring Retrieval-Augmented Generation and Large Language Models for question answering, legal document summarization and document review.</p>
+      <div class="chips"><span>RAG</span><span>LLMs</span><span>NLP</span><span>Legal Documents</span><span>Question Answering</span><span>Summarization</span></div>
+      <span class="cg">STATUS: ONGOING</span>
+    </div>
+    <div class="pipe" aria-label="RAG pipeline">
+      <div>LEGAL DOCUMENT</div><i></i><div>DOCUMENT PROCESSING</div><i></i><div>RETRIEVAL</div><i></i><div>RELEVANT CONTEXT</div><i></i><div>LLM</div><i></i><div>ANSWER / SUMMARY</div>
+    </div>
+  </div></article>
+
+  <article class="proj glass rv"><div class="p2">
+    <div>
+      <span class="badge">FULL-STACK APPLICATION</span>
+      <h3>EMPLOYEE MANAGEMENT SYSTEM</h3>
+      <p>A full-stack employee management application developed using Python, Flask and MySQL.</p>
+      <div class="chips"><span>Python</span><span>Flask</span><span>MySQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Chart.js</span><span>OpenPyXL</span><span>ReportLab</span></div>
+      <a class="btn p" href="https://github.com/Varun4245/Employee-Management-System-Flask" target="_blank" rel="noopener">VIEW ON GITHUB</a>
+    </div>
+    <ul class="feat"><li>Authentication</li><li>Employee CRUD</li><li>Employee Profiles</li><li>Search</li><li>Filtering</li><li>Department Management</li><li>Dashboard</li><li>Charts</li><li>PDF Export</li><li>Excel Export</li><li>Photo Upload</li><li>Password Management</li></ul>
+  </div></article>
+
+  <article class="proj glass p3 rv">
+    <span class="badge">HACKATHON PROJECT</span> <span class="badge">24-HOUR HACKATHON</span>
+    <h3>MENTAL HEALTH &amp; WELL-BEING</h3>
+    <p>A web development project created during the VegaCode 24-Hour Hackathon, focused on creating a simple and accessible user experience around mental health and wellbeing.</p>
+    <p><b style="color:var(--tx)">Role:</b> Frontend Developer</p>
+    <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+  </article>
+</div></section>
+
+<!-- HACKATHON -->
+<section id="hackathon"><div class="wrap">
+  <span class="tag rv">HACKATHON EXPERIENCE</span><h2 class="rv">BUILT UNDER PRESSURE.</h2>
+  <div class="hk rv">
+    <div class="h24" aria-hidden="true">24H</div>
+    <div>
+      <div class="meta glass"><dl><dt>EVENT</dt><dd>VEGACODE · 24-HOUR HACKATHON</dd><dt>ROLE</dt><dd>Frontend Developer</dd><dt>PROJECT</dt><dd>Mental Health &amp; Wellbeing</dd></dl></div>
+      <p>Working under a limited time constraint helped me improve my ability to collaborate, prioritize features and turn an idea into a working web experience.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- WHAT I CAN BUILD -->
+<section id="services"><div class="wrap">
+  <span class="tag rv">FREELANCE</span><h2 class="rv">WHAT I CAN BUILD FOR YOU</h2>
+  <div class="sv">
+    <article class="glass rv"><small>01</small><h3>BUSINESS WEBSITES</h3><p>Modern responsive websites for small businesses and personal brands.</p></article>
+    <article class="glass rv"><small>02</small><h3>ADMIN DASHBOARDS</h3><p>Employee, student and business management dashboards.</p></article>
+    <article class="glass rv"><small>03</small><h3>FLASK WEB APPLICATIONS</h3><p>Python Flask applications with database integration.</p></article>
+    <article class="glass rv"><small>04</small><h3>DATABASE SYSTEMS</h3><p>MySQL-based CRUD applications and management systems.</p></article>
+    <article class="glass rv"><small>05</small><h3>PDF / EXCEL REPORTING</h3><p>Automated report generation and data export.</p></article>
+    <article class="glass rv"><small>06</small><h3>AI / NLP PROJECTS</h3><p>Prototype-level AI, NLP and document-based applications.</p></article>
+  </div>
+  <p class="note rv">I'm a student building real projects, so I'm happy to start with small, well-scoped work and grow from there.</p>
+</div></section>
+
+<!-- CURRENT FOCUS -->
+<section id="focus"><div class="wrap">
+  <span class="tag rv">NOW / NEXT</span><h2 class="rv">CURRENT FOCUS</h2>
+  <div class="road rv">
+    <div class="col glass"><h3>NOW</h3><ul><li>AI / ML</li><li>NLP</li><li>RAG</li><li>LLMs</li><li>Web Development</li></ul></div>
+    <div class="arrow" aria-hidden="true"><i></i></div>
+    <div class="col glass"><h3>NEXT</h3><ul><li>Advanced AI Applications</li><li>Better Full-Stack Development</li><li>Freelance Projects</li><li>Real-World Problem Solving</li></ul></div>
+  </div>
+</div></section>
+
+<!-- CONTACT -->
+<section id="contact"><div class="wrap">
+  <div class="ct glass rv">
+    <h2>HAVE AN IDEA?<br><span class="g">LET'S BUILD IT.</span></h2>
+    <p>I'm open to internships, project collaborations, freelance opportunities and interesting technology projects.</p>
+    <div class="row">
+      <a class="btn p mail" href="mailto:varun.freelance7@gmail.com?subject=Hello%20Varun">EMAIL ME</a>
+      <a class="btn" href="https://www.linkedin.com/in/varun-pillarisetty-b11733357" target="_blank" rel="noopener">LINKEDIN</a>
+      <a class="btn" href="https://github.com/Varun4245" target="_blank" rel="noopener">GITHUB</a>
+    </div>
+    <p style="margin:26px 0 0;font-size:.9rem">varun.freelance7@gmail.com</p>
+  </div>
+</div></section>
+</main>
+
+<!-- FOOTER -->
+<footer><div class="wrap ft">
+  <div><b>PILLARISETTY VARUN</b><p>B.Tech CSE (AI &amp; ML)</p><p><em>Learning. Building. Improving.</em></p></div>
+  <small>© 2026 Varun Pillarisetty</small>
+</div></footer>
+
+<button id="top" aria-label="Back to top">↑</button>
+
+<script>
+/* Navbar blur, back-to-top, active link */
+const nav=document.getElementById('nav'),top_=document.getElementById('top');
+const secs=[...document.querySelectorAll('main section')],links=[...document.querySelectorAll('.links a')];
+const map={hackathon:'journey',services:'projects',focus:'projects'};
+function onScroll(){
+  nav.classList.toggle('sc',scrollY>30);top_.classList.toggle('v',scrollY>600);
+  let cur='home';secs.forEach(s=>{if(scrollY>=s.offsetTop-160)cur=s.id});
+  cur=map[cur]||cur;links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur));
+}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+top_.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+
+/* Mobile menu */
+const bg=document.getElementById('burger'),ls=document.getElementById('links');
+bg.onclick=()=>{const o=ls.classList.toggle('o');bg.classList.toggle('o',o);bg.setAttribute('aria-expanded',o)};
+links.forEach(a=>a.addEventListener('click',()=>{ls.classList.remove('o');bg.classList.remove('o');bg.setAttribute('aria-expanded',false)}));
+
+/* Email: Gmail compose on desktop (works without a mail app); mailto on phones */
+document.querySelectorAll('a.mail').forEach(a=>a.addEventListener('click',e=>{
+  if(matchMedia('(hover:hover) and (pointer:fine)').matches){
+    e.preventDefault();
+    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=varun.freelance7@gmail.com&su=Hello%20Varun','_blank','noopener');
+  }
+}));
+/* LinkedIn / GitHub: always open in a new tab */
+document.querySelectorAll('a[href^="https://"]').forEach(a=>{a.target='_blank';a.rel='noopener noreferrer'});
+
+/* Scroll reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+/* Cursor glow (desktop, motion allowed) + subtle panel tilt */
+if(matchMedia('(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)').matches){
+  const gl=document.getElementById('glow'),pn=document.getElementById('panel');
+  addEventListener('mousemove',e=>{gl.style.left=e.clientX+'px';gl.style.top=e.clientY+'px'});
+  const w=pn.parentElement;
+  w.addEventListener('mousemove',e=>{const r=w.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;pn.style.transform=`perspective(900px) rotateY(${x*8}deg) rotateX(${-y*8}deg)`});
+  w.addEventListener('mouseleave',()=>pn.style.transform='');
+  pn.style.transition='transform .25s';
+}
+</script>
+</body>
+</html>
